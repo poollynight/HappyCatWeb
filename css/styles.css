@@ -11293,7 +11293,7 @@ p {
     font-size: 1.25em;
   }
   #mainNav.navbar-shrink .navbar-brand svg,
-  #mainNav.navbar-shrink .navbar-brand img {
+  #mainNav.navbar-shrink .navbar-brand img .logo{
     height: 1.5rem;
   }
   #mainNav .navbar-nav .nav-item {
@@ -11964,4 +11964,22 @@ body {
   clear: both;
   margin-bottom: 70px;
 }
-/* fake chat */
+/* logo rotate */
+.back-logo{
+  animation: rotate 6s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  33.33% {
+    transform: rotate(180deg);
+  }
+  66.66% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
