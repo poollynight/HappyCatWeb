@@ -57,11 +57,9 @@ window.addEventListener('DOMContentLoaded', event => {
 // chat
 var mess = -1;
 const BOT_MSGS = [
-    "Hi, how are you?",
-    "Ohh... I can't understand what you trying to say. Sorry!",
-    "I like to play games... But I don't know how to play!",
-    "Sorry if my answers are not relevant. :))",
-    "I feel sleepy! :("
+    "Xin chào, chúng tôi có thể giúp gì cho bạn?",
+    "Chắc chắn rồi! Chúng tôi có hỗ trợ đặt tiệc sinh nhật bao gồm các combo bánh đặc biệt. Bạn có thể tham khảo ở đây ","Cửa hàng của chúng tôi".link("https://artemispastry.vn/")
+    
   ];
 $(function () {
     var INDEX = 0;
@@ -89,6 +87,7 @@ $(function () {
         }, 1000)
         
         mess++;
+        
     })
     
     function generate_message(msg, type) {
@@ -98,8 +97,8 @@ $(function () {
         str += "          <span class=\"msg-avatar\">";
         if (type == "self") {
             
-            str += "            <img src=\"assets\/img\/cakes\/ORDER.jpg\">";
-        } else { str += "            <img src=\"assets\/img\/cakes\/cake1.jpg\">";}
+            str += "            <img src=\"assets\/img\/avt\/chat-avt.png\">";
+        } else { str += "            <img src=\"assets\/logo.png\">";}
         
         str += "          <\/span>";
         str += "          <div class=\"cm-msg-text\">";
@@ -115,6 +114,7 @@ $(function () {
             $("#chat-input").val('');
         }
         $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);
+        if (mess == BOT_MSGS.length - 2) { mess++; generate_message('', 'user') }
     }
     
     function generate_button_message(msg, buttons) {
